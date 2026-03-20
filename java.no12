@@ -1,0 +1,32 @@
+package strukturdata;
+
+import java.util.Scanner;
+
+public class StrukturData {
+
+    public static void main(String[] args) {
+        Scanner a = new Scanner(System.in);
+        int[] data = new int[10];
+
+        System.out.println("masukkan 10 angka:");
+        for (int i = 0; i < 10; i++) {
+            System.out.print("indeks ke-" + i + ": ");
+            data[i] = a.nextInt();
+        }
+        System.out.println("CARI ANGKA: ");
+        int target = a.nextInt();
+        int posisi = -1;
+        for (int i = 0; i < data.length; i++) {
+            if (data[i] == target) {
+                posisi = i;
+                break;
+            }
+        }
+        if (posisi != -1) {
+            System.out.println("data ditemukan di indeks-" + posisi);
+        } else {
+            System.out.println("data tidak di temukan");
+        }
+    }
+
+}
