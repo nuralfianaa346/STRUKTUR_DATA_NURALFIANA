@@ -1,0 +1,47 @@
+package strukturdata;
+
+import java.util.*;
+
+public class no13 {
+
+    public static void main(String[] args) {
+        Scanner a = new Scanner(System.in);
+        LinkedList<String> antrian = new LinkedList<>();
+        int pilihan = 0;
+        while (pilihan != 4) {
+            System.out.println("""
+                                   MENU KLINIK:
+                                   1. Tambah pasien
+                                   2. Panggil pasien 
+                                   3. Tampilkan antrian
+                                   4. keluar
+                                   """);
+            System.out.print("silahkan pilih menu: ");
+            pilihan = a.nextInt();
+            a.nextLine();
+
+            if (pilihan == 1) {
+                System.out.print("nama pasien:");
+                String nama = a.nextLine();
+                antrian.addLast(nama);
+                System.out.println(nama + " berhasil ditambahkan");
+            } else if (pilihan == 2) {
+                if (!antrian.isEmpty()) {
+                    String dipanggil = antrian.removeFirst();
+                    System.out.println("Memanggil pasien : " + dipanggil);
+                } else {
+                    System.out.println("antrian kosong!!");
+                }
+            } else if (pilihan == 3) {
+                System.out.print("antrian saat ini: ");
+                if (antrian.isEmpty()) {
+                    System.out.println("kosong");
+                } else {
+                    System.out.println(String.join("-->", antrian));
+                }
+            }
+        }
+        System.out.println("PROGRAM SELESAI");
+    }
+}
+
